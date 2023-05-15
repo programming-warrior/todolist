@@ -1,0 +1,180 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin:0;
+  line-height: 1.5;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+    position: relative;
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+    display: grid;
+    gap: 2rem;
+  }
+
+
+
+button,
+input,
+select
+{
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select
+{
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+li{
+    list-style:none;
+}
+
+input[type="text"],
+input[type="password"]
+{
+  font: 1.25rem / 1.5 sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+
+input::placeholder{
+  opacity: 1; /* Firefox */
+  color: hsl(210, 2%, 18%);
+}
+
+label {
+    display: inline-block;
+    font: bold 1.5rem sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+button{
+    font: 1.25rem sans-serif;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    background-color: hsl(213, 73%, 50%);
+    color: white;
+}
+
+.header{
+    color:rgb(46, 44, 44);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.input-container{
+    margin:1rem 0;
+}
+
+.form-error{
+  text-align: center;
+  color:red;
+  font-size:0.75rem;
+  text-transform: uppercase;
+}
+
+button:hover {
+    background-color: hsl(213, 73%, 40%);
+}
+
+
+nav{
+    width:100%;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav ul li{
+    margin-right:1rem;
+}
+.username{
+  font-size:1.5rem;
+  margin-right: 2rem;
+  text-transform: uppercase;
+  letter-spacing:0.1ch;
+}
+
+.close-btn{
+    position:absolute;
+    top:0.5rem;
+    right:0.5rem;
+    width: 2rem;
+    height:2rem;
+    border-radius: 50%;
+    background-color: rgb(236, 70, 70);
+}
+
+.add-todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.todolists {
+    padding:0;
+}
+
+.todolists li{
+    border: 0.1rem solid rgb(32, 31, 31);
+    padding:0 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: 0.8fr 0.1fr 0.1fr;
+    gap:1rem;
+    align-items: center;
+  transition: all 0.5s ease;
+}
+.todolists li i{
+    pointer-events: none;
+    font-size:1.5rem;
+}
+.todolists>li>*:not(:first-child){
+    cursor: pointer;
+}
+
+.pending-icon i{
+  transition: all 0.1s;
+}
+
+
+.fall{
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
