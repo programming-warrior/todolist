@@ -30,13 +30,24 @@
         <p class="msg" style="text-transform: uppercase">Login in to save,view yours todos. If you don't have the account you can signup. It's free!</p>
         @else
         <div class="main" >
-            <form class="add-todo" method="POST" action="/">
-                <input name="user_id" value={{session('user')}}  style="display: none"/>
-                <input type="text" name="todolist" placeholder="Add todo">
-                <button class="add-icon" type="submit">+</button>
-            </form>
-            @if($todolists==null )
 
+            <div class="form-container">
+                <form class="add-todo" method="POST" action="/">
+                    <input name="user_id" value={{session('user')}}  style="display: none"/>
+                    <input type="text" name="todolist" placeholder="Add todo">
+                    <button class="add-icon" type="submit">+</button>
+                </form>
+                <form action="/reget" class="filter-form" method="Get">
+                    <select name="filter" id="">
+                        <option value="all">ALL</option>
+                        <option value="completed">COMPLETED</option>
+                        <option value="pending">PENDING</option>
+                    </select>
+                </form>
+            </div>
+         
+
+            @if(!$todolists)
                 <p class="msg">You haven't added any todos yet!</p>
             @else
             <div class="todolist-containter">

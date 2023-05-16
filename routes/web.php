@@ -18,6 +18,7 @@ Route::get('/',[todolistController::class,"renderPage"]);
 Route::post('/',[todolistController::class,"storeTodo"]);
 Route::put('/{id}',[todolistController::class,"updateTodo"]);
 Route::delete('/{id}',[todolistController::class,"deleteTodo"]);
+Route::get('/reget',[todolistController::class,"filterTodo"]);
 
 Route::post('/login',[userController::class,"userLogin"]);
 Route::post('/signup',[userController::class,"userSignup"]);

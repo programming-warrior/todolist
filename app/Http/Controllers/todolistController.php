@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -51,5 +50,27 @@ class todolistController extends Controller
         $todolist->save();
 
         return response(201);
+    }
+
+    function filterTodo(Request $req){
+        $todolist=null;
+        $pendingStatus=$req->query('filter');
+        if($pendingStatus=='all'){
+            $todolist=todolist::where('user_id',session('user'))->get();
+            return response()->json(['data'=>$todolist],200);
+        }
+        else{
+            switch($pendingStatus){
+                case 'completed':
+                    $pendingStatus=false;
+                    break;
+                case 'pending':
+                    $pendingStatus=true;
+                    break;
+            }
+            $todolist=todolist::where('user_id',session('user'))->where('pending',$pendingStatus)->get();
+            return response()->json(['data'=>$todolist],200);
+        }
+
     }
 }
