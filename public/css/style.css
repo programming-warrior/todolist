@@ -218,14 +218,12 @@ select{
   width: 100%;
   min-width: 15ch;
   max-width: 30ch;
-  border: 1px solid #777;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
   font-size: 1rem;
   cursor: pointer;
   line-height: 1.1;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  background-color: white;
   display: grid;
   grid-template-areas: "select";
   align-items: center;
@@ -235,7 +233,7 @@ select{
   content: "";
   width: 0.8em;
   height: 0.5em;
-  background-color:  #777;
+  background-color:  #917FB3;
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   justify-self: end;
 }
